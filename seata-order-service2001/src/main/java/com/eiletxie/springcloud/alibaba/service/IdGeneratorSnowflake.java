@@ -15,9 +15,12 @@ import javax.annotation.PostConstruct;
 @Slf4j
 @Component
 public class IdGeneratorSnowflake {
+    //工作中心    0号机房
     private long workerId = 0;
+    //数据中心    1号机器
     private long datacenterId = 1;
     private Snowflake snowflake = IdUtil.createSnowflake(workerId, datacenterId);
+
 
     @PostConstruct
     public void init() {

@@ -18,6 +18,7 @@ mybatis:
   mapper-locations: classpath*:mapper/*.xml
   type-aliases-package: com.eiletxie.springcloud.entities
 
+#启动器上面有@EnableEurekaClient 作为服务发现组件
 eureka:
   client:
     #表示是否将自己注册进EurekaServer默认为true

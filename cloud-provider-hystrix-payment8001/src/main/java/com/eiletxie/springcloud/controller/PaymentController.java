@@ -23,6 +23,11 @@ public class PaymentController {
     @Value("${server.port}")
     private String serverPort;
 
+    /**
+     * ok演示
+     * @param id
+     * @return
+     */
     @GetMapping("/payment/hystrix/ok/{id}")
     public String paymentInfo_OK(@PathVariable("id") Integer id) {
         String result = paymentService.paymentInfo_OK(id);
@@ -30,6 +35,11 @@ public class PaymentController {
         return result;
     }
 
+    /**
+     * 超时演示
+     * @param id
+     * @return
+     */
     @GetMapping("/payment/hystrix/timeout/{id}")
     public String paymentInfo_Timeout(@PathVariable("id") Integer id) {
         String result = paymentService.paymentInfo_Timeout(id);

@@ -48,6 +48,7 @@ public class OrderServiceImpl implements OrderService {
 
         // 3 扣减账户
         log.info("----->订单微服务开始调用账户,做扣减Money");
+        //openFeign调用 默认的超时时间为1s ,这里有模拟超时20s
         accountService.decrease(order.getUserId(), order.getMoney());
         log.info("----->订单微服务开始调用账户,做扣减End");
 

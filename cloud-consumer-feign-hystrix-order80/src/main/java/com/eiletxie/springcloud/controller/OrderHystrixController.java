@@ -19,6 +19,11 @@ import javax.annotation.Resource;
 @Slf4j
 @DefaultProperties(defaultFallback = "paymentInfo_Global_FallbackMethod")
 public class OrderHystrixController {
+    // 下面是全局fallback方法
+    public String paymentInfo_Global_FallbackMethod() {
+        return "Global异常处理信息，请稍后再试， /(ToT)/";
+    }
+
     @Resource
     private PaymentHystrixService paymentHystrixService;
 
@@ -44,8 +49,5 @@ public class OrderHystrixController {
         return "/(ToT)/我是消费者80，调用8001支付系统繁忙，请10秒钟后重新尝试、\t";
     }
 
-    // 下面是全局fallback方法
-    public String paymentInfo_Global_FallbackMethod() {
-        return "Global异常处理信息，请稍后再试， /(ToT)/";
-    }
+
 }
